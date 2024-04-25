@@ -21,7 +21,7 @@ jobs:
       run: npm install
     - name: Run Dependabot
       if: github.event_name == 'schedule' || github.event_name == 'push'
-      uses: dependabot/dependabot-core/action@main
+      uses: dependabot/dependabot-core@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         directory: '/'
