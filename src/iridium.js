@@ -102,3 +102,30 @@ function getTable(config) {
 }
 
 exports.getTable = getTable;
+
+/**
+ * @fileoverview This module scrapes data from the IridiumFlares website.
+ * @requires request
+ * @requires cheerio
+ * @requires fs
+ * @requires ./utils
+ */
+
+/**
+ * List of events related to Iridium Flares.
+ * @type {Array<string>}
+ */
+
+/**
+ * This function gets the table data from the IridiumFlares website.
+ * @param {Object} config - The configuration object.
+ * @param {Array} config.database - The database to store the scraped data.
+ * @param {number} config.counter - The counter to keep track of the number of requests.
+ * @param {number} config.opt - The option to determine the type of request (GET or POST).
+ * @param {string} config.root - The root directory to store the scraped data.
+ */
+/**
+ * This function creates a new Promise for each item in the queue.
+ * @param {Object} temp - The temporary object to store the scraped data.
+ * @returns {Promise} - The Promise that resolves to the scraped data.
+ */

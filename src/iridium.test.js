@@ -3,14 +3,35 @@ const fs = require('fs');
 const request = require('request');
 const utils = require('./utils');
 
+/**
+ * @fileoverview This module tests the getTable function from the iridium module.
+ * @requires ./iridium
+ * @requires fs
+ * @requires request
+ * @requires ./utils
+ * @requires jest
+ */
+
+/**
+ * Mocking the 'fs' module with jest.fn() for testing.
+ * @type {Object}
+ */
 jest.mock('fs', () => ({
     existsSync: jest.fn(),
     mkdir: jest.fn(),
     appendFile: jest.fn(),
 }));
 
+/**
+ * Mocking the 'request' module with jest.fn() for testing.
+ * @type {Function}
+ */
 jest.mock('request', () => jest.fn());
 
+/**
+ * Mocking the 'utils' module with jest.fn() for testing.
+ * @type {Object}
+ */
 jest.mock('./utils', () => ({
     get_options: jest.fn(),
     post_options: jest.fn(),
