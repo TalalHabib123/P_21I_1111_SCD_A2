@@ -13,7 +13,7 @@
     "script1": "mkdir -p ./logs && npm run lint 2>&1 | tee ./logs/lint.log",
     "script2": "mkdir -p ./logs && npm run build 2>&1 | tee ./logs/build.log",
     "linting": "mkdir code-review && npm run lint > code-review/linting.log",
-    "analyze": "webpack --profile --json > code-review/stats.json && webpack-bundle-analyzer code-review/stats.json",
+    "analyze": "webpack --profile --json > code-review/stats.json",
     "security-check": "npx snyk test > code-review/security-check.log"
   },
   "dependencies": {
