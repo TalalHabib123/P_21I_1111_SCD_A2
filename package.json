@@ -14,7 +14,8 @@
     "script2": "mkdir -p ./logs && npm run build 2>&1 | tee ./logs/build.log",
     "linting": "mkdir code-review && npm run lint > code-review/linting.log",
     "analyze": "webpack --profile --json > code-review/stats.json",
-    "security-check": "npx snyk test > code-review/security-check.log || true"
+    "security-check": "npx snyk test > code-review/security-check.log || true",
+    "build-docs": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -42,6 +43,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0",
+    "jsdoc": "^4.0.2",
     "snyk": "^1.1290.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
