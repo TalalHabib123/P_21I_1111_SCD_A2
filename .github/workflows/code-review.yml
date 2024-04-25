@@ -25,3 +25,8 @@ jobs:
       run: npx snyk auth ${{ secrets.SNYK_TOKEN }}
     - name: Run security scan
       run: npm run security-check
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-review
+        path: code-review/
