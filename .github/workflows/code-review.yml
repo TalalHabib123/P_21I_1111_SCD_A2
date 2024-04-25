@@ -21,5 +21,7 @@ jobs:
       run: npm run linting
     - name: Run static code analysis
       run: npm run analyze
+    - name: Authenticate Snyk
+      run: npx snyk auth ${{ secrets.SNYK_TOKEN }}
     - name: Run security scan
       run: npm run security-check

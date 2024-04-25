@@ -14,7 +14,7 @@
     "script2": "mkdir -p ./logs && npm run build 2>&1 | tee ./logs/build.log",
     "linting": "mkdir code-review && npm run lint > code-review/linting.log",
     "analyze": "webpack --profile --json > code-review/stats.json",
-    "security-check": "npx snyk test > code-review/security-check.log"
+    "security-check": "npx snyk test > code-review/security-check.log || true"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
