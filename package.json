@@ -11,7 +11,10 @@
     "build": "webpack --mode=production",
     "script": "mkdir -p ./logs && npm run test 2>&1 | tee ./logs/test.log",
     "script1": "mkdir -p ./logs && npm run lint 2>&1 | tee ./logs/lint.log",
-    "script2": "mkdir -p ./logs && npm run build 2>&1 | tee ./logs/build.log"
+    "script2": "mkdir -p ./logs && npm run build 2>&1 | tee ./logs/build.log",
+    "linting": "mkdir code-review && npm run lint > code-review/linting.log",
+    "analyze": "mkdir code-review && --mode=production --profile --json > code-review/stats.json && webpack-bundle-analyzer code-review/stats.json",
+    "security-check": "mkdir code-review && npx snyk test > code-review/security-check.log"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
