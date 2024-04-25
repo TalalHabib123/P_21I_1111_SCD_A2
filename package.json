@@ -8,7 +8,10 @@
     "start": "node run.js",
     "test": "jest",
     "lint": "eslint .",
-    "build": "webpack --mode=production"  
+    "build": "webpack --mode=production",
+    "script": "mdkdir -p ./logs && npm run test 2>&1 | tee ./logs/test.log",
+    "script1": "mdkdir -p ./logs && npm run lint 2>&1 | tee ./logs/lint.log",
+    "script2": "mdkdir -p ./logs && npm run build 2>&1 | tee ./logs/build.log"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
