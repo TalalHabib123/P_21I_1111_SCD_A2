@@ -1,9 +1,6 @@
 name: Scheduled Tasks
 
 on:
-    push:
-        branches:
-            [main]
     schedule:
         - cron: '0 12 * * *'
 
