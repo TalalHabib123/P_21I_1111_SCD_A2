@@ -1,14 +1,10 @@
-name: Dependabot
+name: Dependabot Update Verfication
 on:
-    push:
-        branches: [ main ]  
-    schedule:
-        - cron: '0 0 * * *'
-    pull_request:
-        types: [opened, synchronize]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
-  dependabot:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -19,14 +15,5 @@ jobs:
         node-version: '16.x'
     - name: Install dependencies
       run: npm install
-    - name: Run Dependabot
-      if: github.event_name == 'schedule' || github.event_name == 'push'
-      uses: dependabot/dependabot-core@main
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        directory: '/'
-        package-manager: 'npm'
-        versioning-strategy: 'lockfile-only'
     - name: Run tests
-      if: github.event_name == 'pull_request'
       run: npm run test
